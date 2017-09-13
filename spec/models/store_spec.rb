@@ -11,6 +11,8 @@ describe "Store" do
       expect(store).to respond_to(:long_name)
       expect(store).to respond_to(:city)
       expect(store).to respond_to(:distance)
+      expect(store).to respond_to(:phone)
+      expect(store).to respond_to(:store_type)
     end
   end
 end

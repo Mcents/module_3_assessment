@@ -10,7 +10,7 @@ class BestService
     store_json = @conn.get do |req|
       req.url "v1/stores(area(#{zip},25))"
       req.params['format'] = "json"
-      req.params['show'] = 'longName,city,distance,phone,storeType,storeId'
+      req.params['show'] = 'longName,city,distance,phone,storeType'
       req.params['apiKey'] = "#{ENV['API_KEY']}"
       req.params['pageSize'] = "10"
     end 

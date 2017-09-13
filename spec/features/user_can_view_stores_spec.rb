@@ -8,6 +8,8 @@ describe "Stores Info" do
     click_button "Search"
 
     expect(current_path).to eq(search_path)
+    expect(page).to have_content("17 Total Stores")
+    expect(page).to have_content("3.45")
     expect(page).to have_content("City")
     expect(page).to have_content("Distance")
     expect(page).to have_content("Name")
