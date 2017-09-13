@@ -29,4 +29,18 @@ describe "all items endpoint" do
       expect(items["description"]).to eq("cool robot")
     end
   end
+
+  context "creates an item endpoint" do
+    it "creates an item" do
+      item = Item.create(name: "Robot1", description: "cool robot", image_url: "google.com/images")
+      item_params = {name: "Robot2", description: "cool guy", image_url: "google.com/images"}
+
+      post "/api/v1/items", item: item_params
+
+      items = JSON.parse(response.body)
+      
+      expect(response).to be_success
+      expect(items.second["name"]).to eq("Robot2")
+    end
+  end
 end
