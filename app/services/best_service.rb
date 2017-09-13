@@ -12,9 +12,9 @@ class BestService
       req.params['format'] = "json"
       req.params['show'] = 'longName,city,distance,phone,storeType,storeId'
       req.params['apiKey'] = "#{ENV['API_KEY']}"
-      req.params['pageSize'] = "17"
+      req.params['pageSize'] = "10"
     end 
-    parse(store_json.body)[:stores]
+    parse(store_json.body)
   end
 
   def parse(stores)

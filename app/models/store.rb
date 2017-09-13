@@ -10,8 +10,12 @@ class Store
     @store_type = store_atts[:storeType]
   end
 
+  def self.store_total(zip)
+    BestService.new.store_info(zip)[:total]
+  end
+
   def self.store_info(zip)
-    BestService.new.store_info(zip).map do |raw|
+    BestService.new.store_info(zip)[:stores].map do |raw|
       Store.new(raw)
     end
   end
