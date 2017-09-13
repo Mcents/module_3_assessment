@@ -16,6 +16,15 @@ describe "Stores Info" do
     expect(page).to have_content("Phone")
     expect(page).to have_content("Store Type")
   end
+
+  #it "Erros on invalid zip" do
+    
+    #visit '/'
+    #fill_in :zip, with: "213"
+    #click_button "Search"
+
+    #expect(current_path).to eq(root_path)
+  #end
 end
 
 #As a user
