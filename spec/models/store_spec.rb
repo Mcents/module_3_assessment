@@ -8,7 +8,7 @@ describe "Store" do
       store = stores.first
 
       expect(stores.count).to eq(17)
-      expect(store).to respond_to(:longName)
+      expect(store).to respond_to(:long_name)
       expect(store).to respond_to(:city)
       expect(store).to respond_to(:distance)
     end
