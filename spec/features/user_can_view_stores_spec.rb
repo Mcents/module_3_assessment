@@ -10,6 +10,9 @@ describe "Stores Info" do
     expect(current_path).to eq(search_path)
     expect(page).to have_content("City")
     expect(page).to have_content("Distance")
+    expect(page).to have_content("Name")
+    expect(page).to have_content("Phone")
+    expect(page).to have_content("Store Type")
   end
 end
 
