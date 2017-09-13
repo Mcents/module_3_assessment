@@ -43,4 +43,18 @@ describe "all items endpoint" do
       expect(items.second["name"]).to eq("Robot2")
     end
   end
+
+  context "deletes an item endpoint" do
+    it "deletes an item" do
+      item = Item.create(name: "Robot1", description: "cool robot", image_url: "google.com/images")
+      item2 = Item.create(name: "Robot2", description: "cool robot also", image_url: "google.com/images")
+      items = Item.all
+      
+      delete "/api/v1/items/#{item2.id}"
+      
+      expect(response).to be_success
+      expect(response.status).to eq(201)
+      expect(items.count).to eq(1)
+    end
+  end
 end
