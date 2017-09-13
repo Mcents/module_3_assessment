@@ -4,9 +4,15 @@ describe BestService do
   context "#store_info" do
     it "retrieves store info" do
       
-      store = BestService.new.store_info(80231)
+      stores = BestService.new.store_info(80231)
+      store = stores.first
 
-      expect(store.class).to eq(Hash)
+      expect(stores.class).to eq(Array)
+      expect(store).to have_key(:longName)
+      expect(store).to have_key(:city)
+      expect(store).to have_key(:distance)
+      expect(store).to have_key(:phone)
+      expect(store).to have_key(:storeType)
     end
   end
 end
