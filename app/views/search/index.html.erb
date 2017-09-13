@@ -1,0 +1,20 @@
+<h2>Stores</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>City</th>
+    <th>Distance</th>
+    <th>Phone</th>
+    <th>Store Type</th>
+    </tr>
+    <tr>
+    <% @stores.each do |s| %>
+      <td><%= s.long_name %></td>
+      <td><%= s.city %></td>
+      <td><%= s.distance %></td>
+      <td><%= s.phone %></td>
+      <td><%= s.store_type %></td>
+    </tr>
+    <% end %>
+</table>
